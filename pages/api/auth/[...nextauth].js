@@ -23,10 +23,10 @@ export default NextAuth({
     }),
    
     
-    // Providers.Facebook({
-    //   clientId: process.env.FACEBOOK_ID,
-    //   clientSecret: process.env.FACEBOOK_SECRET,
-    // }),
+    Providers.Facebook({
+      clientId: process.env.FACEBOOK_ID,
+      clientSecret: process.env.FACEBOOK_SECRET,
+    }),
     
     // Providers.Google({
     //   clientId: process.env.GOOGLE_ID,

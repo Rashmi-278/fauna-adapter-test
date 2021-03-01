@@ -57,7 +57,7 @@ export default function Header () {
 
               <button  
               className={styles.button}
-              onClick={() => window.location.href = "/api/auth/federated-logout"}>
+              onClick={() => window.location.href = "/api/auth/logout"}>
               Sign out
               </button>
           </>}

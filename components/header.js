@@ -44,22 +44,19 @@ export default function Header () {
               >
                 Sign out
               </a> */}
-              {/* <a
-                href={`/api/auth/federated-logout`}
+              <a
+                href={`/api/auth/logout`}
                 className={styles.button}
-                onClick={(e) => {
-                  e.preventDefault()
-                  signOut()
-                }}
+                
               >
                 Sign out
-              </a> */}
+              </a>
 
-              <button  
+              {/* <button  
               className={styles.button}
               onClick={() => window.location.href = "/api/auth/logout"}>
               Sign out
-              </button>
+              </button> */}
           </>}
         </p>
       </div>

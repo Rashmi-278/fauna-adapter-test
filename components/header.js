@@ -45,7 +45,7 @@ export default function Header () {
                 Sign out
               </a> */}
               <a
-                href={`/api/auth/fed-logout`}
+                href={`/api/auth/logout`}
                 className={styles.button}
               >
                 Sign out

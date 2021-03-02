@@ -21,7 +21,7 @@ export default NextAuth({
       clientId: process.env.COGNITO_CLIENT_ID,
       domain: process.env.COGNITO_DOMAIN,
      // authorizationUrl: `https://${process.env.COGNITO_DOMAIN}/oauth2/authorize?response_type=code&client_id=${process.env.COGNITO_CLIENT_ID}&prompt=login`
-      authorizationUrl: `https://${process.env.COGNITO_DOMAIN}/login?response_type=code&client_id=${process.env.COGNITO_CLIENT_ID}&redirect_uri=${process.env.COGNITO_LOGOUT_REDIRECT_URL}&state=STATE&scope=openid+profile+aws.cognito.signin.user.admin`
+      //authorizationUrl: `https://${process.env.COGNITO_DOMAIN}/login?response_type=code&client_id=${process.env.COGNITO_CLIENT_ID}&redirect_uri=${process.env.COGNITO_LOGOUT_REDIRECT_URL}&state=STATE&scope=openid+profile+aws.cognito.signin.user.admin`
 
     }),
    

@@ -34,7 +34,7 @@ export default function Header () {
               <small>Signed in as</small><br/>
               <strong>{session.user.email || session.user.name}</strong>
               </span>
-            <a
+            {/* <a
                 href={`/api/auth/signout`}
                 className={styles.button}
                 onClick={(e) => {
@@ -43,14 +43,14 @@ export default function Header () {
                 }}
               >
                 Sign out
-              </a>
-              {/* <a
-                href={`/api/auth/federated-logout`}
+              </a> */}
+              <a
+                href={`/api/auth/logout`}
                 className={styles.button}
                 
               >
                 Sign out
-              </a> */}
+              </a>
 
               {/* <button  
               className={styles.button}

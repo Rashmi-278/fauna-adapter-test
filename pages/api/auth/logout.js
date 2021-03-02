@@ -11,6 +11,6 @@ export default async function logout(req, res) {
     await handleLogout(req, res);
   } catch (error) {
     console.error(error);
-    res.status(error.status || 400).end(error.message);
+    res.status(error.status || 400 + "inside api endpoint ").end(error.message + "inside api endpoint ");
   }
 }

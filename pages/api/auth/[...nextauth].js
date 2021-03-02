@@ -20,7 +20,7 @@ export default NextAuth({
      Providers.Cognito({
       clientId: process.env.COGNITO_CLIENT_ID,
       domain: process.env.COGNITO_DOMAIN,
-      // authorizationUrl: `https://${process.env.COGNITO_DOMAIN}/oauth2/authorize?response_type=code&client_id=${process.env.COGNITO_CLIENT_ID}&prompt=consent`
+      //authorizationUrl: `https://${process.env.COGNITO_DOMAIN}/oauth2/authorize?response_type=code&client_id=${process.env.COGNITO_CLIENT_ID}&prompt=consent`
 
     }),
    

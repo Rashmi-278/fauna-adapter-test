@@ -37,10 +37,10 @@ export default function Header () {
             <a
                 href={`/api/auth/logout`}
                 className={styles.button}
-                onClick={(e) => {
-                  e.preventDefault()
-                  signOut()
-                }}
+                // onClick={(e) => {
+                //   e.preventDefault()
+                //   signOut()
+                // }}
               >
                 Sign out
               </a>

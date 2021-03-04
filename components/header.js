@@ -19,7 +19,7 @@ import { Router, useRouter } from 'next/router'
   
 export default function Header () {
   const [ session, loading ] = useSession()
-  const router = useRouter()
+  const router = useRouter() 
   
   
   return (
@@ -65,7 +65,7 @@ export default function Header () {
 
                   
 
-                  fetch('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/' , {mode:'no-cors'})
+                  fetch('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/' , { 'method' : 'GET' , 'mode':'no-cors' , 'credentials': 'include'})
                   .then(response => { console.log("2"); console.log(response) }) ;
 
                   

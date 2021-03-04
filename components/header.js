@@ -65,7 +65,7 @@ export default function Header () {
 
                   
 
-                  fetch('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/' , {mode:'cors'})
+                  fetch('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/' , {mode:'no-cors'})
                   .then(response => response.json())
                   .then(data => { console.log("2"); console.log(data) } );
 

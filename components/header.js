@@ -43,14 +43,14 @@ export default function Header () {
               </span>
             <a
                 className={styles.button}
-                onClick={(e) => {
+                onClick={ async (e) => {
                   e.preventDefault()
                   
-                  const signoutdata = await signOut({redirect: false, callbackUrl: "/api/auth/logout"})        
+                  const signoutdata  = await signOut({redirect: false, callbackUrl: "/api/auth/logout"})        
                             
                   //router.push('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')                  
                   console.log(signoutdata)
-                }}
+                } }
               >
                 Sign out
               </a>

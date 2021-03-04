@@ -35,12 +35,12 @@ export default function Header () {
               <strong>{session.user.email || session.user.name}</strong>
               </span>
             <a
-                href={`/api/auth/fed-logout`}
+                href={`/api/auth/signout`}
                 className={styles.button}
-                // onClick={(e) => {
-                //   e.preventDefault()
-                //   signOut( {redirect:false , callbackUrl: '/api/auth/logout'})
-                // }}
+                onClick={(e) => {
+                  e.preventDefault()
+                  signOut()
+                }}
               >
                 Sign out
               </a>

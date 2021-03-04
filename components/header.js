@@ -46,7 +46,7 @@ export default function Header () {
                 onClick={async(e) => {
                   e.preventDefault()
                   signOut()
-                  router.push('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')                  
+                  //router.push('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')                  
 
                   //const signoutdata  = await signOut({ callbackUrl: "/api/auth/logout"})        
                             

@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import styles from './header.module.css'
-import { Router, useRouter } from 'next/router'
-import useSWR from 'swr'
+// import { Router, useRouter } from 'next/router'
+import redirect from 'nextjs-redirect'
 
 // var XMLHttpRequest = require("xmlhttprequest");
 
@@ -21,8 +21,6 @@ import useSWR from 'swr'
   
 export default function Header () {
   const [ session, loading ] = useSession()
-  const router = useRouter() 
-  const fetcher = (...args) => fetch(...args).then(res => res.json())
 
   
   
@@ -66,9 +64,11 @@ export default function Header () {
                   const nextauthdata = await signOut( { redirect:false })
                   console.log("1")
                   console.log(nextauthdata)
-
-                  const { signoutdata, error } = useSWR('/api/auth/logout', fetcher)
-                  console.log(signoutdata)
+                  redirect('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')
+                  
+                  
+                  // const { signoutdata, error } = useSWR('/api/auth/logout', fetcher)
+                  // console.log(signoutdata)
 
 
                   

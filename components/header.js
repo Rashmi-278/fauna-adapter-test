@@ -28,7 +28,7 @@ export default function Header () {
                 className={styles.buttonPrimary}
                 onClick={(e) => {
                   e.preventDefault()
-                  signIn("cognito")
+                  signIn("google")
                 }}
               >
                 Sign in
@@ -41,17 +41,18 @@ export default function Header () {
               <strong>{session.user.email || session.user.name}</strong>
               </span>
             <a
+                href={'/api/auth/signout'}
                 className={styles.button}
                 onClick={ async(e) => {
                   e.preventDefault()
+                  signOut()
+                  // const nextauthdata = await signOut({redirect:false} )
+                  // console.log("1")
+                  // console.log(nextauthdata)
 
-                  const nextauthdata = await signOut({redirect:false} )
-                  console.log("1")
-                  console.log(nextauthdata)
 
-
-                  const res = await axios.get(`https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/` , { headers: {"Access-Control-Allow-Origin": "*"} });
-                  console.log(res)
+                  // const res = await axios.get(`https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/` , { headers: {"Access-Control-Allow-Origin": "*"} });
+                  // console.log(res)
                   
                   // const { signoutdata, error } = useSWR('/api/auth/logout', fetcher)
                   // console.log(signoutdata)

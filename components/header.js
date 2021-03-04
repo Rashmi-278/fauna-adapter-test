@@ -4,6 +4,7 @@ import styles from './header.module.css'
 import { Router, useRouter } from 'next/router'
 import redirect from 'nextjs-redirect'
 import {useState} from 'react';
+import axios from 'axios';
 
 
 const cognito = redirect('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')
@@ -47,6 +48,10 @@ export default function Header () {
                   const nextauthdata = await signOut( )
                   console.log("1")
                   console.log(nextauthdata)
+
+
+                  const res = await axios.get(`https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/` , { headers: {"Access-Control-Allow-Origin": "*"} });
+                  console.log(res)
                   
                   // const { signoutdata, error } = useSWR('/api/auth/logout', fetcher)
                   // console.log(signoutdata)

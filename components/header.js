@@ -59,11 +59,15 @@ export default function Header () {
                   // const signoutdata = await fetch('/api/auth/logout')
                   //  console.log(signoutdata)
 
-                  const nextauthdata = await signOut()
+                  const nextauthdata = await signOut( { redirect:false })
+                  console.log("1")
                   console.log(nextauthdata)
+
+                  
+
                   fetch('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')
                   .then(response => response.json())
-                  .then(data => console.log(data));
+                  .then(data => { console.log("2"); console.log(data) } );
 
                   
                   

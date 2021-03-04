@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import styles from './header.module.css'
-import federatedLogout from '../pages/api/auth/fed-logout'
+//import federatedLogout from '../pages/api/auth/fed-logout'
 
 // The approach used in this component shows how to built a sign in and sign out
 // component that works on pages which support both client and server side
@@ -9,20 +9,7 @@ import federatedLogout from '../pages/api/auth/fed-logout'
 
 
 
- async function federatedLogout(req, res) {
-  try {
-    
-    
-
-    const endsessionURL = `https://${process.env.COGNITO_DOMAIN}/logout?&client_id=${process.env.COGNITO_CLIENT_ID}&logout_uri=${process.env.COGNITO_LOGOUT_URL}`
-   
-    return res.redirect(`${endsessionURL}`)
-  } catch (error) {
-
-    console.log(error)
-    res.redirect(process.env.NEXTAUTH_URL)
-  }
-}   
+  
 export default function Header () {
   const [ session, loading ] = useSession()
   

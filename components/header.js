@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import styles from './header.module.css'
+//import logout from '../pages/api'
+import federatedLogout from '../pages/api/auth/fed-logout'
 
 // The approach used in this component shows how to built a sign in and sign out
 // component that works on pages which support both client and server side
@@ -41,6 +43,8 @@ export default function Header () {
                   e.preventDefault()
                   
                   signOut()
+                  federatedLogout()
+                  
                   console.log("signed out")
                 }}
               >

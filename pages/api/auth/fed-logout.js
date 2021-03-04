@@ -1,5 +1,5 @@
-import jwt from "next-auth/jwt"
-// import log from "utils/server-logger"
+import jwt from "next-auth/jwt" 
+//import log from "utils/server-logger"
 
 export default async function federatedLogout(req, res) {
   try {

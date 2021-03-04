@@ -40,7 +40,7 @@ export default function Header () {
                 onClick={(e) => {
                   e.preventDefault()
                   
-                  signOut()
+                  //signOut()
                   console.log("signed out")
                 }}
               >

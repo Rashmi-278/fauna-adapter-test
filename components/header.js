@@ -48,7 +48,7 @@ export default function Header () {
               <small>Signed in as</small><br/>
               <strong>{session.user.email || session.user.name}</strong>
               </span>
-            {/* <a
+            <a
                 className={styles.button}
                 onClick={async(e) => {
                   e.preventDefault()
@@ -56,8 +56,8 @@ export default function Header () {
                   // Http.open("GET", url);
                   // Http.send();
 
-                  const signoutdata = await fetch('/api/auth/logout')
-                  console.log(signoutdata)
+                  // const signoutdata = await fetch('/api/auth/logout')
+                  // console.log(signoutdata)
 
                   const nextauthdata = await signOut({redirect:false ,callbackUrl:"/"})
                   console.log(nextauthdata)
@@ -70,21 +70,22 @@ export default function Header () {
                 } }
               >
                 Sign out
-              </a> */}
+              </a>
 
 
-              <a
+              {/* <a
                 href={`/api/auth/logout`}
                 className={styles.button}
               >
                 Sign out
-              </a>
+              </a> */}
 
               {/* <button  
               className={styles.button}
               onClick={() => window.location.href = "/api/auth/logout"}>
               Sign out
               </button> */}
+              
           </>}
         </p>
       </div>

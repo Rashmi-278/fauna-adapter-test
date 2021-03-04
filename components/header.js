@@ -2,12 +2,19 @@ import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import styles from './header.module.css'
 import { Router, useRouter } from 'next/router'
+// var XMLHttpRequest = require("xmlhttprequest");
 
-// The approach used in this component shows how to built a sign in and sign out
-// component that works on pages which support both client and server side
-// rendering, and avoids any flash incorrect content on initial page load.
+// // The approach used in this component shows how to built a sign in and sign out
+// // component that works on pages which support both client and server side
+// // rendering, and avoids any flash incorrect content on initial page load.
+
+// const Http = new XMLHttpRequest();
+// const url='https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/';
 
 
+// Http.onreadystatechange = (e) => {
+//   console.log(Http.responseText)
+// }
 
   
 export default function Header () {
@@ -41,15 +48,20 @@ export default function Header () {
               <small>Signed in as</small><br/>
               <strong>{session.user.email || session.user.name}</strong>
               </span>
-            <a
+            {/* <a
                 className={styles.button}
                 onClick={async(e) => {
                   e.preventDefault()
-                  const signoutdata = await fetch('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')
+
+                  // Http.open("GET", url);
+                  // Http.send();
+
+                  const signoutdata = await fetch('/api/auth/logout')
                   console.log(signoutdata)
 
                   const nextauthdata = await signOut({redirect:false ,callbackUrl:"/"})
                   console.log(nextauthdata)
+                  
                   //router.push('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')                  
 
                   //const signoutdata  = await signOut({ callbackUrl: "/api/auth/logout"})        
@@ -58,13 +70,15 @@ export default function Header () {
                 } }
               >
                 Sign out
-              </a>
-              {/* <a
+              </a> */}
+
+
+              <a
                 href={`/api/auth/logout`}
                 className={styles.button}
               >
                 Sign out
-              </a> */}
+              </a>
 
               {/* <button  
               className={styles.button}

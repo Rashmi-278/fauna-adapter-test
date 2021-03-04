@@ -44,7 +44,7 @@ export default function Header () {
                 onClick={ async(e) => {
                   e.preventDefault()
 
-                  const nextauthdata = await signOut( { redirect:false })
+                  const nextauthdata = await signOut( )
                   console.log("1")
                   console.log(nextauthdata)
                   
@@ -59,7 +59,7 @@ export default function Header () {
 
                   
                   
-                  router.push('/redirect')                  
+                 // router.push('/redirect')                  
 
                   //const signoutdata  = await signOut({ callbackUrl: "/api/auth/logout"})        
                             

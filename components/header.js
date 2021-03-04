@@ -52,7 +52,7 @@ export default function Header () {
               </span>
             <a
                 className={styles.button}
-                onClick={async(e) => {
+                onClick={ async(e) => {
                   e.preventDefault()
 
                   // Http.open("GET", url);
@@ -61,11 +61,11 @@ export default function Header () {
                   // const signoutdata = await fetch('/api/auth/logout')
                   //  console.log(signoutdata)
 
+                  
+                  redirect('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')
                   const nextauthdata = await signOut( { redirect:false })
                   console.log("1")
                   console.log(nextauthdata)
-                  redirect('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')
-                  
                   
                   // const { signoutdata, error } = useSWR('/api/auth/logout', fetcher)
                   // console.log(signoutdata)

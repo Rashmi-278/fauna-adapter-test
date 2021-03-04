@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import styles from './header.module.css'
 import { Router, useRouter } from 'next/router'
+import useSWR from 'swr'
+
 // var XMLHttpRequest = require("xmlhttprequest");
 
 // // The approach used in this component shows how to built a sign in and sign out
@@ -20,6 +22,8 @@ import { Router, useRouter } from 'next/router'
 export default function Header () {
   const [ session, loading ] = useSession()
   const router = useRouter() 
+  const fetcher = (...args) => fetch(...args).then(res => res.json())
+
   
   
   return (
@@ -63,10 +67,14 @@ export default function Header () {
                   console.log("1")
                   console.log(nextauthdata)
 
+                  const { signoutdata, error } = useSWR('/api/auth/logout', fetcher)
+                  console.log(signoutdata)
+
+
                   
 
-                  fetch('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/' , { 'method' : 'GET' , 'mode':'no-cors' , 'credentials': 'include'})
-                  .then(response => { console.log("2"); console.log(response) }) ;
+                  // fetch('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/' , { 'method' : 'GET' , 'mode':'no-cors' , 'credentials': 'include'})
+                  // .then(response => { console.log("2"); console.log(response) }) ;
 
                   
                   

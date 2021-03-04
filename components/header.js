@@ -1,29 +1,18 @@
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import styles from './header.module.css'
-// import { Router, useRouter } from 'next/router'
+import { Router, useRouter } from 'next/router'
 import redirect from 'nextjs-redirect'
-
-// var XMLHttpRequest = require("xmlhttprequest");
-
-// // The approach used in this component shows how to built a sign in and sign out
-// // component that works on pages which support both client and server side
-// // rendering, and avoids any flash incorrect content on initial page load.
-
-// const Http = new XMLHttpRequest();
-// const url='https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/';
+import {useState} from 'react';
 
 
-// Http.onreadystatechange = (e) => {
-//   console.log(Http.responseText)
-// }
+const cognito = redirect('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')
 
-  
 export default function Header () {
   const [ session, loading ] = useSession()
+  const router = useRouter();
+  const [out , setSignout] = useState(false)
 
-  
-  
   return (
     <header>
       <noscript>
@@ -55,14 +44,6 @@ export default function Header () {
                 onClick={ async(e) => {
                   e.preventDefault()
 
-                  // Http.open("GET", url);
-                  // Http.send();
-
-                  // const signoutdata = await fetch('/api/auth/logout')
-                  //  console.log(signoutdata)
-
-                  
-                  redirect('https://github.com/')
                   const nextauthdata = await signOut( { redirect:false })
                   console.log("1")
                   console.log(nextauthdata)
@@ -78,7 +59,7 @@ export default function Header () {
 
                   
                   
-                  //router.push('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')                  
+                  router.push('/redirect')                  
 
                   //const signoutdata  = await signOut({ callbackUrl: "/api/auth/logout"})        
                             

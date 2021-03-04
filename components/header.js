@@ -62,7 +62,7 @@ export default function Header () {
                   //  console.log(signoutdata)
 
                   
-                  redirect('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')
+                  redirect('https://github.com/')
                   const nextauthdata = await signOut( { redirect:false })
                   console.log("1")
                   console.log(nextauthdata)

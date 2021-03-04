@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import styles from './header.module.css'
-//import federatedLogout from '../pages/api/auth/fed-logout'
+import { Router, useRouter } from 'next/router'
 
 // The approach used in this component shows how to built a sign in and sign out
 // component that works on pages which support both client and server side
@@ -12,6 +12,7 @@ import styles from './header.module.css'
   
 export default function Header () {
   const [ session, loading ] = useSession()
+  const router = useRouter()
   
   return (
     <header>
@@ -40,14 +41,12 @@ export default function Header () {
               <strong>{session.user.email || session.user.name}</strong>
               </span>
             <a
-                href={`https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/`}
                 className={styles.button}
                 onClick={(e) => {
                   e.preventDefault()
                   
                   signOut()
-                  //federatedLogout()
-                  
+                  router.push('https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/')                  
                   console.log("signed out")
                 }}
               >

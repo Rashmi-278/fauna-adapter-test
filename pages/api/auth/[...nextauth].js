@@ -12,10 +12,10 @@ const faunaClient = new faunadb.Client({
 export default NextAuth({
   // https://next-auth.js.org/configuration/providers
   providers: [
-    //  Providers.Email({
-    //    server: process.env.EMAIL_SERVER,
-    //    from: process.env.EMAIL_FROM,
-    //  }),
+     Providers.Email({
+       server: process.env.EMAIL_SERVER,
+       from: process.env.EMAIL_FROM,
+     }),
 
      Providers.Cognito({
       clientId: process.env.COGNITO_CLIENT_ID,

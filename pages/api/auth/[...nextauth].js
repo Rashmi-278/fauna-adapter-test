@@ -2,6 +2,7 @@ import NextAuth from "next-auth"
 import Providers from "next-auth/providers"
 import {Adapter} from "./../../../utils/fauna"
 import faunadb from "faunadb"
+import { redirect } from "next/dist/next-server/server/api-utils";
 
 const faunaClient = new faunadb.Client({
   secret: process.env.FAUNADB_SECRET_KEY,
@@ -40,4 +41,12 @@ export default NextAuth({
     
   ],
   adapter: Adapter({faunaClient}),
+
+  callbacks: {
+    async redirect(url , baseUrl) {
+      return baseUrl
+    }
+
+
+  }
 })

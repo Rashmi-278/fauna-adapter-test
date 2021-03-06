@@ -449,7 +449,7 @@ const Adapter = (config, options = {}) => {
       )
 
       try {
-        const { ref, request: verificationRequest } = await faunaClient.query(FQL)
+        const { ref, verificationRequest } = await faunaClient.query(FQL)
         const nowDate = Date.now()
 
         if (verificationRequest && verificationRequest.expires && verificationRequest.expires < nowDate) {

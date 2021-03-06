@@ -28,7 +28,7 @@ export default function Header () {
                 className={styles.buttonPrimary}
                 onClick={(e) => {
                   e.preventDefault()
-                  signIn()
+                  signIn("cognito")
                 }}
               >
                 Sign in
@@ -76,13 +76,13 @@ export default function Header () {
               </a> */}
 
 
-              {/* <a
+              <a
                 href={`https://nextauth1.auth.ap-south-1.amazoncognito.com/logout?client_id=7agnle801a00muhiuvc26n6rfu&logout_uri=https://fauna-adapter-test.vercel.app/api/auth/signout`}
                 className={styles.button}
               >
                 Sign out
-              </a> */}
-
+              </a>
+{/* 
               <a
               href={'/api/auth/signout'}
               className={styles.button}
@@ -92,7 +92,7 @@ export default function Header () {
               }}             
               >
                 signout
-              </a>
+              </a> */}
 
               {/* <button  
               className={styles.button}

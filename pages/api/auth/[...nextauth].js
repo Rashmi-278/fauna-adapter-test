@@ -13,10 +13,10 @@ const faunaClient = new faunadb.Client({
 export default NextAuth({
   // https://next-auth.js.org/configuration/providers
   providers: [
-     Providers.Email({
-       server: process.env.EMAIL_SERVER,
-       from: process.env.EMAIL_FROM,
-     }),
+    //  Providers.Email({
+    //    server: process.env.EMAIL_SERVER,
+    //    from: process.env.EMAIL_FROM,
+    //  }),
 
      Providers.Cognito({
       clientId: process.env.COGNITO_CLIENT_ID,
@@ -27,17 +27,17 @@ export default NextAuth({
     }),
    
     
-    Providers.Facebook({
-      clientId: process.env.FACEBOOK_ID,
-      clientSecret: process.env.FACEBOOK_SECRET,
-    }),
+    // Providers.Facebook({
+    //   clientId: process.env.FACEBOOK_ID,
+    //   clientSecret: process.env.FACEBOOK_SECRET,
+    // }),
     
-    Providers.Google({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
-      authorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code',
+    // Providers.Google({
+    //   clientId: process.env.GOOGLE_ID,
+    //   clientSecret: process.env.GOOGLE_SECRET,
+    //   authorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code',
 
-    }),
+    // }),
     
   ],
   adapter: Adapter({faunaClient}),

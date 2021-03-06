@@ -42,11 +42,11 @@ export default NextAuth({
   ],
   adapter: Adapter({faunaClient}),
 
-  // callbacks: {
-  //   async redirect(url , baseUrl) {
-  //     return baseUrl
-  //   }
+  callbacks: {
+    async redirect(url , baseUrl) {
+      return baseUrl
+    }
 
 
-  // }
+  }
 })
